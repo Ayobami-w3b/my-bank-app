@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Transfer & Pay | Horizon Bank</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =========================
+           TRANSFER PAGE
+        ========================= */
+
+        .transfer-page {
+            min-height: 100vh;
+            background: #f5f7fb;
+        }
+
+        .transfer-header {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 18px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .transfer-header-left {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .back-dashboard {
+            color: #174ea6;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .back-dashboard:hover {
+            text-decoration: underline;
+        }
+
+        .transfer-user {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .transfer-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #174ea6;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .transfer-user small {
+            color: #6b7280;
+        }
+
+        .transfer-main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 45px 24px 80px;
+        }
+
+        .transfer-title {
+            margin-bottom: 32px;
+        }
+
+        .transfer-title span {
+            color: #174ea6;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .transfer-title h1 {
+            margin: 8px 0;
+            font-size: 34px;
+            color: #111827;
+        }
+
+        .transfer-title p {
+            color: #6b7280;
+            margin: 0;
+        }
+
+        .demo-warning {
+            background: #eef5ff;
+            border: 1px solid #cfe0ff;
+            color: #174ea6;
+            padding: 14px 18px;
+            border-radius: 10px;
+            margin-bottom: 28px;
+            font-size: 14px;
+        }
+
+        .transfer-layout {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 25px;
+            align-items: start;
+        }
+
+        .transfer-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(20, 40, 80, 0.07);
+            border: 1px solid #e8ebf0;
+        }
+
+        .transfer-card h2 {
+            margin: 0 0 8px;
+            font-size: 21px;
+            color: #111827;
+        }
+
+        .card-subtitle {
+            margin-bottom: 25px;
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 21px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #374151;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 14px 15px;
+            border: 1px solid #d7dce5;
+            border-radius: 9px;
+            font-size: 15px;
+            outline: none;
+            background: #fff;
+            transition: 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #174ea6;
+            box-shadow: 0 0 0 3px rgba(23, 78, 166, 0.08);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .account-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .available-balance {
+            color: #6b7280;
+            font-size: 12px;
+            margin-top: 7px;
+        }
+
+        .recipient-box {
+            border: 1px solid #d7dce5;
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .recipient-box:hover {
+            border-color: #174ea6;
+            background: #f8fbff;
+        }
+
+        .recipient-avatar {
+            width: 42px;
+            height: 42px;
+            background: #e9f1ff;
+            color: #174ea6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .recipient-info strong {
+            display: block;
+            color: #111827;
+            font-size: 14px;
+        }
+
+        .recipient-info span {
+            color: #6b7280;
+            font-size: 12px;
+        }
+
+        .selected-recipient {
+            border-color: #174ea6;
+            background: #f8fbff;
+        }
+
+        .transfer-button {
+            width: 100%;
+            border: none;
+            padding: 15px;
+            border-radius: 9px;
+            background: #174ea6;
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s ease;
+            margin-top: 8px;
+        }
+
+        .transfer-button:hover {
+            background: #123d83;
+            transform: translateY(-1px);
+        }
+
+        .transfer-button:disabled {
+            background: #aeb8c8;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* RIGHT SIDE */
+
+        .summary-card {
+            background: #111827;
+            color: white;
+            border-radius: 16px;
+            padding: 27px;
+        }
+
+        .summary-card h3 {
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-size: 18px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .summary-row:last-child {
+            border-bottom: none;
+        }
+
+        .summary-row span:first-child {
+            color: #aeb8c8;
+            font-size: 13px;
+        }
+
+        .summary-row span:last-child {
+            font-size: 14px;
+            font-weight: 600;
+            text-align: right;
+        }
+
+        .summary-balance {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .summary-balance small {
+            color: #aeb8c8;
+        }
+
+        .summary-balance strong {
+            display: block;
+            font-size: 27px;
+            margin-top: 5px;
+        }
+
+        /* SUCCESS */
+
+        .success-screen {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .success-icon {
+            width: 78px;
+            height: 78px;
+            margin: 0 auto 22px;
+            border-radius: 50%;
+            background: #e7f7ee;
+            color: #16834b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 38px;
+            animation: successPop 0.45s ease;
+        }
+
+        @keyframes successPop {
+            0% {
+                transform: scale(0.4);
+                opacity: 0;
+            }
+
+            80% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .success-screen h2 {
+            font-size: 27px;
+            margin-bottom: 8px;
+            color: #111827;
+        }
+
+        .success-screen p {
+            color: #6b7280;
+        }
+
+        .receipt {
+            max-width: 450px;
+            margin: 28px auto;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .receipt-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 11px 0;
+            border-bottom: 1px solid #edf0f4;
+            font-size: 14px;
+        }
+
+        .receipt-row:last-child {
+            border-bottom: none;
+        }
+
+        .receipt-row span:first-child {
+            color: #6b7280;
+        }
+
+        .receipt-row strong {
+            color: #111827;
+        }
+
+        .done-button {
+            display: inline-block;
+            background: #174ea6;
+            color: white;
+            text-decoration: none;
+            padding: 13px 28px;
+            border-radius: 8px;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .transfer-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .summary-card {
+                order: -1;
+            }
+
+            .transfer-main {
+                padding-top: 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .transfer-header {
+                padding: 15px 20px;
+            }
+
+            .transfer-user div:last-child {
+                display: none;
+            }
+
+            .transfer-title h1 {
+                font-size: 28px;
+            }
+
+            .transfer-card {
+                padding: 22px;
+            }
+
+            .summary-card {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="transfer-page">
+
+    <!-- HEADER -->
+    <header class="transfer-header">
+
+        <div class="transfer-header-left">
+
+            <strong class="logo">
+                HORIZON<span>.</span>
+            </strong>
+
+            <a href="dashboard.html" class="back-dashboard">
+                ← Dashboard
+            </a>
+
+        </div>
+
+        <div class="transfer-user">
+
+            <div class="transfer-avatar">
+                BM
+            </div>
+
+            <div>
+                <strong>Bobby Meeks</strong><br>
+                <small>Personal Banking</small>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="transfer-main">
+
+        <div class="transfer-title">
+
+            <span>TRANSFER & PAY</span>
+
+            <h1>Send Money</h1>
+
+            <p>
+                Move money securely between your Horizon Bank accounts.
+            </p>
+
+        </div>
+
+
+        <div class="demo-warning">
+            <strong>Transfer Environment:</strong>
+            This transfer is real and might take a while before money is processed.
+        </div>
+
+
+        <!-- TRANSFER CONTENT -->
+
+        <div id="transferContent">
+
+            <div class="transfer-layout">
+
+                <!-- FORM -->
+
+                <section class="transfer-card">
+
+                    <h2>Transfer Details</h2>
+
+                    <p class="card-subtitle">
+                        Enter the details for your transfer.
+                    </p>
+
+
+                    <!-- FROM ACCOUNT -->
+
+                    <div class="form-group">
+
+                        <label for="fromAccount">
+                            From account
+                        </label>
+
+                        <select id="fromAccount">
+
+                            <option value="12480.72">
+                                Horizon Advantage Checking ••••4827 — $12,480.72
+                            </option>
+
+                            <option value="35809.92">
+                                Horizon Growth Savings ••••2194 — $35,809.92
+                            </option>
+
+                        </select>
+
+                        <div class="available-balance">
+                            Available balance:
+                            <strong id="availableBalance">
+                                $32,480.72
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <!-- RECIPIENT -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Select recipient
+                        </label>
+
+
+                        <div
+                            class="recipient-box selected-recipient"
+                            data-name="Alex Morgan"
+                            data-account="•••• 9032"
+                        >
+
+                            <div class="recipient-avatar">
+                                AM
+                            </div>
+
+                            <div class="recipient-info">
+
+                                <strong>
+                                    Alex Morgan
+                                </strong>
+
+                                <span>
+                                    Horizon Checking ••••9032
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="recipient-box"
+                            data-name="Sarah Williams"
+                            data-account="•••• 6184"
+                        >
+
+                            <div class="recipient-avatar">
+                                SW
+                            </div>
+
+                            <div class="recipient-info">
+
+                                <strong>
+                                    Sarah Williams
+                                </strong>
+
+                                <span>
+                                    Horizon Savings ••••6184
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- AMOUNT -->
+
+                    <div class="form-group">
+
+                        <label for="amount">
+                            Amount
+                        </label>
+
+                        <input
+                            type="number"
+                            id="amount"
+                            placeholder="0.00"
+                            min="1"
+                            step="0.01"
+                        >
+
+                    </div>
+
+
+                    <!-- MEMO -->
+
+                    <div class="form-group">
+
+                        <label for="memo">
+                            Memo <span style="color:#9ca3af;">(optional)</span>
+                        </label>
+
+                        <textarea
+                            id="memo"
+                            placeholder="What's this transfer for?"
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        class="transfer-button"
+                        id="reviewButton"
+                    >
+                        Review Transfer
+                    </button>
+
+
+                    <p
+                        id="transferError"
+                        style="
+                            display:none;
+                            color:#c62828;
+                            font-size:13px;
+                            margin-top:15px;
+                            text-align:center;
+                        "
+                    ></p>
+
+                </section>
+
+
+                <!-- SUMMARY -->
+
+                <aside class="summary-card">
+
+                    <h3>Transfer Summary</h3>
+
+
+                    <div class="summary-row">
+
+                        <span>From</span>
+
+                        <span id="summaryFrom">
+                            Checking ••••4827
+                        </span>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>To</span>
+
+                        <span id="summaryTo">
+                            Alex Morgan
+                        </span>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>Amount</span>
+
+                        <span id="summaryAmount">
+                            $0.00
+                        </span>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>Fee</span>
+
+                        <span>
+                            $0.00
+                        </span>
+
+                    </div>
+
+
+                    <div class="summary-balance">
+
+                        <small>
+                            Remaining balance
+                        </small>
+
+                        <strong id="remainingBalance">
+                            $12,480.72
+                        </strong>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </div>
+
+
+        <!-- SUCCESS SCREEN -->
+
+        <section
+            class="success-screen"
+            id="successScreen"
+        >
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h2>
+                Transfer Successful
+            </h2>
+
+            <p>
+                Your transfer has been completed successfully.
+            </p>
+
+
+            <div class="receipt">
+
+                <div class="receipt-row">
+
+                    <span>
+                        Recipient
+                    </span>
+
+                    <strong id="receiptRecipient">
+                        Alex Morgan
+                    </strong>
+
+                </div>
+
+
+                <div class="receipt-row">
+
+                    <span>
+                        Amount
+                    </span>
+
+                    <strong id="receiptAmount">
+                        $0.00
+                    </strong>
+
+                </div>
+
+
+                <div class="receipt-row">
+
+                    <span>
+                        From
+                    </span>
+
+                    <strong id="receiptFrom">
+                        Checking ••••4827
+                    </strong>
+
+                </div>
+
+
+                <div class="receipt-row">
+
+                    <span>
+                        Memo
+                    </span>
+
+                    <strong id="receiptMemo">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="receipt-row">
+
+                    <span>
+                        Confirmation
+                    </span>
+
+                    <strong id="receiptNumber">
+                        HB-FSHRF-0069903
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="dashboard.html"
+                class="done-button"
+            >
+                Return to Dashboard
+            </a>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script>
+
+    const fromAccount =
+        document.getElementById("fromAccount");
+
+    const availableBalance =
+        document.getElementById("availableBalance");
+
+    const amountInput =
+        document.getElementById("amount");
+
+    const memoInput =
+        document.getElementById("memo");
+
+    const reviewButton =
+        document.getElementById("reviewButton");
+
+    const transferError =
+        document.getElementById("transferError");
+
+    const summaryAmount =
+        document.getElementById("summaryAmount");
+
+    const remainingBalance =
+        document.getElementById("remainingBalance");
+
+    const summaryTo =
+        document.getElementById("summaryTo");
+
+    const summaryFrom =
+        document.getElementById("summaryFrom");
+
+    const recipientBoxes =
+        document.querySelectorAll(".recipient-box");
+
+    let selectedRecipient = {
+        name: "Alex Morgan",
+        account: "••••9032"
+    };
+
+
+    function formatMoney(number) {
+
+        return new Intl.NumberFormat("en-US", {
+            style: "currency",
+            currency: "USD"
+        }).format(number);
+
+    }
+
+
+    function updateAccount() {
+
+        const balance =
+            Number(fromAccount.value);
+
+        availableBalance.textContent =
+            formatMoney(balance);
+
+        const accountText =
+            fromAccount.options[
+                fromAccount.selectedIndex
+            ].text;
+
+        if (accountText.includes("Checking")) {
+
+            summaryFrom.textContent =
+                "Checking ••••4827";
+
+        } else {
+
+            summaryFrom.textContent =
+                "Savings ••••2194";
+
+        }
+
+        updateSummary();
+
+    }
+
+
+    function updateSummary() {
+
+        const amount =
+            Number(amountInput.value) || 0;
+
+        const balance =
+            Number(fromAccount.value);
+
+        summaryAmount.textContent =
+            formatMoney(amount);
+
+        remainingBalance.textContent =
+            formatMoney(
+                Math.max(balance - amount, 0)
+            );
+
+    }
+
+
+    recipientBoxes.forEach(box => {
+
+        box.addEventListener("click", () => {
+
+            recipientBoxes.forEach(item => {
+
+                item.classList.remove(
+                    "selected-recipient"
+                );
+
+            });
+
+            box.classList.add(
+                "selected-recipient"
+            );
+
+            selectedRecipient = {
+
+                name:
+                    box.dataset.name,
+
+                account:
+                    box.dataset.account
+
+            };
+
+            summaryTo.textContent =
+                selectedRecipient.name;
+
+        });
+
+    });
+
+
+    fromAccount.addEventListener(
+        "change",
+        updateAccount
+    );
+
+
+    amountInput.addEventListener(
+        "input",
+        updateSummary
+    );
+
+
+    reviewButton.addEventListener(
+        "click",
+        () => {
+
+            const amount =
+                Number(amountInput.value);
+
+            const balance =
+                Number(fromAccount.value);
+
+
+            transferError.style.display =
+                "none";
+
+
+            if (!amount || amount <= 0) {
+
+                transferError.textContent =
+                    "Please enter a valid transfer amount.";
+
+                transferError.style.display =
+                    "block";
+
+                return;
+
+            }
+
+
+            if (amount > balance) {
+
+                transferError.textContent =
+                    "The transfer amount cannot exceed the available demo balance.";
+
+                transferError.style.display =
+                    "block";
+
+                return;
+
+            }
+
+
+            /*
+                DEMO SUCCESS
+            */
+
+            document.getElementById(
+                "transferContent"
+            ).style.display = "none";
+
+
+            document.getElementById(
+                "successScreen"
+            ).style.display = "block";
+
+
+            document.getElementById(
+                "receiptRecipient"
+            ).textContent =
+                selectedRecipient.name;
+
+
+            document.getElementById(
+                "receiptAmount"
+            ).textContent =
+                formatMoney(amount);
+
+
+            document.getElementById(
+                "receiptFrom"
+            ).textContent =
+                summaryFrom.textContent;
+
+
+            document.getElementById(
+                "receiptMemo"
+            ).textContent =
+                memoInput.value.trim() || "—";
+
+
+            const randomNumber =
+                Math.floor(
+                    100000 + Math.random() * 900000
+                );
+
+
+            document.getElementById(
+                "receiptNumber"
+            ).textContent =
+                "HB-DEMO-" + randomNumber;
+
+        }
+    );
+
+
+    updateAccount();
+
+</script>
+
+</body>
+</html>

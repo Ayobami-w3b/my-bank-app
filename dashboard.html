@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Horizon Bank</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body class="dashboard-page">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="dashboard-sidebar" id="sidebar">
+
+        <div class="sidebar-top">
+
+            <a href="index.html" class="logo dashboard-logo">
+
+                <span class="logo-mark">H</span>
+
+                <span class="logo-text">
+                    HORIZON<span>BANK</span>
+                </span>
+
+            </a>
+
+            <button class="sidebar-close" id="sidebarClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <div class="demo-badge">
+            <i class="fa-solid fa-flask"></i>
+            <strong>USER ENVIRONMENT</strong>
+        </div>
+
+
+        <nav class="dashboard-nav">
+
+            <a href="#" class="active">
+                <i class="fa-solid fa-grid-2"></i>
+                <span>Overview</span>
+            </a>
+
+               <a href="transfer.html" class="dashboard-transfer-btn">
+          <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                  Transfer
+                </a>
+
+            <a href="cards.html">
+             <i class="fa-solid fa-credit-card"></i>
+            <span>My Cards</span>
+            </a>
+
+                <a href="home.html">
+            <i class="fa-solid fa-house"></i>
+            <span>My Home</span>
+                 </a>
+
+             <a href="vehicle.html">
+             <i class="fa-solid fa-car"></i>
+             <span>My Vehicle</span>
+            </a>
+
+            <a href="investments.html">
+             <i class="fa-solid fa-chart-line"></i>
+             <span>Investments</span>
+                </a>
+
+            <div class="nav-divider"></div>
+
+              <a href="profile.html">
+             <i class="fa-solid fa-user"></i>
+             <span>Profile</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-circle-question"></i>
+                <span>Help & Support</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="secure-status">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <div>
+                    <strong>Secure Session</strong>
+                    <span>Protected</span>
+                </div>
+
+            </div>
+
+            <a href="login.html" class="logout-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                Sign Out
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="dashboard-main">
+
+
+        <!-- TOP BAR -->
+
+        <header class="dashboard-header">
+
+            <button class="mobile-sidebar-btn" id="sidebarOpen">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+
+            <div class="dashboard-title">
+
+                <span>PERSONAL BANKING</span>
+
+                <h1>Good morning, Bobby.</h1>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <button class="notification-btn">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <div class="profile-menu">
+
+                    <div class="avatar">
+                        BM
+                    </div>
+
+                    <div class="profile-name">
+
+                        <strong>Bobby Meeks</strong>
+
+                        <span>Personal Account</span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- DEMO NOTICE -->
+
+        <div class="dashboard-notice">
+
+            <div>
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                <span>
+                    You're viewing a Real-Time Horizon Bank user environment. Transcations may take a while before being processed 
+                </span>
+
+            </div>
+
+            <button>
+                Dismiss
+            </button>
+
+        </div>
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <div class="dashboard-content">
+
+
+            <!-- BALANCE -->
+
+            <section class="balance-section">
+
+                <div class="balance-main-card">
+
+                    <div class="balance-card-header">
+
+                        <div>
+
+                            <span>Total available balance</span>
+
+                            <button id="balanceToggle">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+
+                        </div>
+
+                        <span class="balance-up">
+                            +4.8%
+                        </span>
+
+                    </div>
+
+
+                    <div class="main-balance" id="mainBalance">
+                        $87,290.64
+                    </div>
+
+
+                    <p>
+                        Across your Horizon Bank accounts
+                    </p>
+
+
+                    <div class="balance-actions">
+
+                 <a href="transfer.html" class="dashboard-action-btn">
+        <i class="fa-solid fa-arrow-right-arrow-left"></i>
+        Transfer
+                    </a>
+
+                    <button>
+                     <i class="fa-solid fa-money-bill-transfer"></i>
+                       Pay
+                        </button>
+
+                     <button>
+                     <i class="fa-solid fa-plus"></i>
+                     Deposit
+                     </button>
+
+                        </div>
+                </div>
+
+
+                <!-- QUICK ACTIONS -->
+
+                <div class="quick-actions-card">
+
+                    <h3>Quick actions</h3>
+
+                    <div class="quick-actions-grid">
+
+                        <button>
+                            <span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </span>
+                            Send money
+                        </button>
+
+                        <button>
+                            <span>
+                                <i class="fa-solid fa-receipt"></i>
+                            </span>
+                            Pay a bill
+                        </button>
+
+                        <button>
+                            <span>
+                                <i class="fa-solid fa-mobile-screen"></i>
+                            </span>
+                            Mobile deposit
+                        </button>
+
+                        <button>
+                            <span>
+                                <i class="fa-solid fa-building-columns"></i>
+                            </span>
+                            Find branch
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ACCOUNTS -->
+
+            <section class="dashboard-section">
+
+                <div class="section-top">
+
+                    <div>
+
+                        <span>YOUR MONEY</span>
+
+                        <h2>Accounts</h2>
+
+                    </div>
+
+                    <a href="#">
+                        View all
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+                <div class="accounts-grid">
+
+
+                    <!-- CHECKING -->
+
+                    <article class="account-card">
+
+                        <div class="account-icon checking">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+
+                        <div class="account-info">
+
+                            <span>CHECKING</span>
+
+                            <h3>
+                                Horizon Advantage Checking
+                            </h3>
+
+                            <small>
+                                •••• 4827
+                            </small>
+
+                        </div>
+
+                        <div class="account-balance">
+
+                            <span>Available</span>
+
+                            <strong>
+                                $12,480.72
+                            </strong>
+
+                        </div>
+
+                        <div class="account-progress">
+
+                            <span></span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- SAVINGS -->
+
+                    <article class="account-card">
+
+                        <div class="account-icon savings">
+                            <i class="fa-solid fa-piggy-bank"></i>
+                        </div>
+
+                        <div class="account-info">
+
+                            <span>SAVINGS</span>
+
+                            <h3>
+                                Horizon Growth Savings
+                            </h3>
+
+                            <small>
+                                •••• 2194
+                            </small>
+
+                        </div>
+
+                        <div class="account-balance">
+
+                            <span>Available</span>
+
+                            <strong>
+                                $35,809.92
+                            </strong>
+
+                        </div>
+
+                        <div class="account-progress savings-progress">
+
+                            <span></span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- CREDIT CARD -->
+
+                    <article class="account-card credit-account">
+
+                        <div class="account-icon credit">
+                            <i class="fa-solid fa-credit-card"></i>
+                        </div>
+
+                        <div class="account-info">
+
+                            <span>CREDIT CARD</span>
+
+                            <h3>
+                                Horizon Platinum
+                            </h3>
+
+                            <small>
+                                •••• 7412
+                            </small>
+
+                        </div>
+
+                        <div class="account-balance">
+
+                            <span>Available credit</span>
+
+                            <strong>
+                                $8,740.00
+                            </strong>
+
+                        </div>
+
+                        <div class="account-progress credit-progress">
+
+                            <span></span>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- LOWER GRID -->
+
+            <section class="dashboard-lower">
+
+
+                <!-- TRANSACTIONS -->
+
+                <div class="transactions-card">
+
+                    <div class="section-top">
+
+                        <div>
+
+                            <span>ACTIVITY</span>
+
+                            <h2>Recent transactions</h2>
+
+                        </div>
+
+                        <a href="#">
+                            See all
+                        </a>
+
+                    </div>
+
+
+                    <div class="transaction-list">
+
+
+                        <div class="transaction">
+
+                            <div class="transaction-icon shopping">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                            </div>
+
+                            <div class="transaction-details">
+
+                                <strong>
+                                    Nike Store
+                                </strong>
+
+                                <span>
+                                    Oct 7 · Card purchase
+                                </span>
+
+                            </div>
+
+                            <strong class="expense">
+                                -$129.99
+                            </strong>
+
+                        </div>
+
+
+                        <div class="transaction">
+
+                            <div class="transaction-icon food">
+                                <i class="fa-solid fa-utensils"></i>
+                            </div>
+
+                            <div class="transaction-details">
+
+                                <strong>
+                                    The Garden Restaurant
+                                </strong>
+
+                                <span>
+                                    Oct 6 · Card purchase
+                                </span>
+
+                            </div>
+
+                            <strong class="expense">
+                                -$84.50
+                            </strong>
+
+                        </div>
+
+
+                        <div class="transaction">
+
+                            <div class="transaction-icon income">
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </div>
+
+                            <div class="transaction-details">
+
+                                <strong>
+                                    Direct Deposit
+                                </strong>
+
+                                <span>
+                                    Oct 4 · Horizon Checking
+                                </span>
+
+                            </div>
+
+                            <strong class="income-text">
+                                +$3,850.00
+                            </strong>
+
+                        </div>
+
+
+                        <div class="transaction">
+
+                            <div class="transaction-icon transfer">
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                            </div>
+
+                            <div class="transaction-details">
+
+                                <strong>
+                                    Transfer to Savings
+                                </strong>
+
+                                <span>
+                                    Oct 3 · Internal transfer
+                                </span>
+
+                            </div>
+
+                            <strong class="expense">
+                                -$500.00
+                            </strong>
+
+                        </div>
+
+
+                        <div class="transaction">
+
+                            <div class="transaction-icon shopping">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+
+                            <div class="transaction-details">
+
+                                <strong>
+                                    Amazon
+                                </strong>
+
+                                <span>
+                                    Oct 2 · Card purchase
+                                </span>
+
+                            </div>
+
+                            <strong class="expense">
+                                -$76.42
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SPENDING -->
+
+                <div class="spending-card">
+
+                    <div class="section-top">
+
+                        <div>
+
+                            <span>SPENDING</span>
+
+                            <h2>This month</h2>
+
+                        </div>
+
+                        <button class="month-btn">
+                            October
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="spending-total">
+                        $1,482.36
+                    </div>
+
+                    <span class="spending-label">
+                        Total spending
+                    </span>
+
+
+                    <div class="spending-chart">
+
+                        <div
+                            class="chart-bar"
+                            style="height: 45%;"
+                        ></div>
+
+                        <div
+                            class="chart-bar"
+                            style="height: 65%;"
+                        ></div>
+
+                        <div
+                            class="chart-bar"
+                            style="height: 35%;"
+                        ></div>
+
+                        <div
+                            class="chart-bar"
+                            style="height: 80%;"
+                        ></div>
+
+                        <div
+                            class="chart-bar active"
+                            style="height: 58%;"
+                        ></div>
+
+                        <div
+                            class="chart-bar"
+                            style="height: 70%;"
+                        ></div>
+
+                        <div
+                            class="chart-bar"
+                            style="height: 42%;"
+                        ></div>
+
+                    </div>
+
+
+                    <div class="chart-labels">
+
+                        <span>Mon</span>
+                        <span>Tue</span>
+                        <span>Wed</span>
+                        <span>Thu</span>
+                        <span>Fri</span>
+                        <span>Sat</span>
+                        <span>Sun</span>
+
+                    </div>
+
+
+                    <div class="spending-categories">
+
+                        <div>
+                            <span class="category-dot food-dot"></span>
+                            Food
+                            <strong>$384</strong>
+                        </div>
+
+                        <div>
+                            <span class="category-dot shopping-dot"></span>
+                            Shopping
+                            <strong>$528</strong>
+                        </div>
+
+                        <div>
+                            <span class="category-dot bills-dot"></span>
+                            Bills
+                            <strong>$570</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- SECURITY BANNER -->
+
+            <section class="security-banner">
+
+                <div class="security-banner-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        Stay protected
+                    </strong>
+
+                    <p>
+                        Enable additional security features to help protect
+                        your Horizon Bank account.
+                    </p>
+
+                </div>
+
+                <button>
+                    Review security
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        /* ================= SIDEBAR ================= */
+
+        const sidebar =
+            document.getElementById("sidebar");
+
+        const sidebarOpen =
+            document.getElementById("sidebarOpen");
+
+        const sidebarClose =
+            document.getElementById("sidebarClose");
+
+
+        sidebarOpen.addEventListener("click", () => {
+
+            sidebar.classList.add("open");
+
+        });
+
+
+        sidebarClose.addEventListener("click", () => {
+
+            sidebar.classList.remove("open");
+
+        });
+
+
+        /* ================= BALANCE ================= */
+
+        const balanceToggle =
+            document.getElementById("balanceToggle");
+
+        const mainBalance =
+            document.getElementById("mainBalance");
+
+
+        let balanceVisible = true;
+
+
+        balanceToggle.addEventListener("click", () => {
+
+            balanceVisible = !balanceVisible;
+
+
+            if (balanceVisible) {
+
+                mainBalance.textContent =
+                    "$48,290.64";
+
+                balanceToggle.innerHTML =
+                    '<i class="fa-regular fa-eye"></i>';
+
+            } else {
+
+                mainBalance.textContent =
+                    "••••••••";
+
+                balanceToggle.innerHTML =
+                    '<i class="fa-regular fa-eye-slash"></i>';
+
+            }
+
+        });
+
+
+        /* ================= NOTICE ================= */
+
+        const notice =
+            document.querySelector(".dashboard-notice");
+
+        const noticeButton =
+            document.querySelector(".dashboard-notice button");
+
+
+        noticeButton.addEventListener("click", () => {
+
+            notice.style.display = "none";
+
+        });
+
+    </script>
+
+</body>
+</html>
