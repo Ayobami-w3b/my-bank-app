@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Cards | Horizon Bank</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ==============================
+           MY CARDS PAGE
+        ============================== */
+
+        .cards-page {
+            min-height: 100vh;
+            background: #f5f7fb;
+        }
+
+        .cards-header {
+            background: #fff;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 18px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cards-header-left {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .cards-back {
+            color: #174ea6;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .cards-back:hover {
+            text-decoration: underline;
+        }
+
+        .cards-profile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .cards-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #174ea6;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+        }
+
+        .cards-profile small {
+            color: #6b7280;
+        }
+
+        .cards-main {
+            max-width: 1150px;
+            margin: auto;
+            padding: 45px 24px 80px;
+        }
+
+        .cards-heading span {
+            color: #174ea6;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .cards-heading h1 {
+            margin: 8px 0;
+            font-size: 35px;
+            color: #111827;
+        }
+
+        .cards-heading p {
+            margin: 0;
+            color: #6b7280;
+        }
+
+        .cards-demo-notice {
+            margin: 28px 0;
+            padding: 14px 18px;
+            background: #eef5ff;
+            border: 1px solid #cfe0ff;
+            border-radius: 10px;
+            color: #174ea6;
+            font-size: 14px;
+        }
+
+        .cards-layout {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 25px;
+            align-items: start;
+        }
+
+        /* ==============================
+           CARD VISUAL
+        ============================== */
+
+        .bank-card-wrapper {
+            background: #fff;
+            border: 1px solid #e7eaf0;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(20, 40, 80, 0.07);
+        }
+
+        .bank-card {
+            width: 100%;
+            max-width: 590px;
+            min-height: 310px;
+            margin: auto;
+            border-radius: 22px;
+            padding: 30px;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+            color: white;
+            background:
+                linear-gradient(
+                    135deg,
+                    #0b3b82,
+                    #1764c0 55%,
+                    #0b2c61
+                );
+            box-shadow: 0 20px 45px rgba(13, 57, 119, 0.3);
+        }
+
+        .bank-card::before {
+            content: "";
+            position: absolute;
+            width: 270px;
+            height: 270px;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 50%;
+            right: -100px;
+            top: -90px;
+        }
+
+        .bank-card::after {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50%;
+            right: -40px;
+            bottom: -120px;
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-brand {
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .card-brand span {
+            font-weight: 400;
+        }
+
+        .card-type {
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            opacity: 0.8;
+        }
+
+        .chip {
+            width: 55px;
+            height: 42px;
+            border-radius: 8px;
+            background: #d6c58c;
+            margin-top: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .chip::before,
+        .chip::after {
+            content: "";
+            position: absolute;
+            border: 1px solid rgba(80,70,30,0.4);
+        }
+
+        .chip::before {
+            left: 18px;
+            top: 0;
+            height: 100%;
+        }
+
+        .chip::after {
+            top: 19px;
+            left: 0;
+            width: 100%;
+        }
+
+        .card-number {
+            position: relative;
+            z-index: 2;
+            font-size: 25px;
+            letter-spacing: 3px;
+            margin-top: 30px;
+            font-weight: 500;
+        }
+
+        .card-bottom {
+            position: absolute;
+            bottom: 28px;
+            left: 30px;
+            right: 30px;
+            display: flex;
+            justify-content: space-between;
+            z-index: 2;
+        }
+
+        .card-label {
+            display: block;
+            font-size: 8px;
+            opacity: 0.7;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .card-value {
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .visa {
+            font-size: 28px;
+            font-weight: 800;
+            font-style: italic;
+        }
+
+        /* ==============================
+           CARD CONTROLS
+        ============================== */
+
+        .card-controls {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .card-control {
+            border: 1px solid #e0e4eb;
+            background: white;
+            padding: 14px 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.2s ease;
+            font-size: 13px;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .card-control i {
+            display: block;
+            font-size: 18px;
+            color: #174ea6;
+            margin-bottom: 7px;
+        }
+
+        .card-control:hover {
+            border-color: #174ea6;
+            background: #f7faff;
+            transform: translateY(-2px);
+        }
+
+        .card-control.frozen {
+            background: #fff3f3;
+            border-color: #f0b7b7;
+            color: #b42318;
+        }
+
+        .card-control.frozen i {
+            color: #b42318;
+        }
+
+        /* ==============================
+           CARD INFORMATION
+        ============================== */
+
+        .card-info {
+            margin-top: 25px;
+            padding: 22px;
+            background: #f8faff;
+            border-radius: 12px;
+            border: 1px solid #e1e9f8;
+        }
+
+        .card-info h3 {
+            margin: 0 0 17px;
+            color: #111827;
+            font-size: 17px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 11px 0;
+            border-bottom: 1px solid #e7edf7;
+            font-size: 14px;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-row span {
+            color: #6b7280;
+        }
+
+        .info-row strong {
+            color: #111827;
+        }
+
+        /* ==============================
+           RIGHT PANEL
+        ============================== */
+
+        .credit-panel {
+            background: #111827;
+            color: white;
+            border-radius: 18px;
+            padding: 28px;
+        }
+
+        .credit-panel h2 {
+            margin: 0 0 7px;
+            font-size: 20px;
+        }
+
+        .credit-panel > p {
+            color: #aeb8c8;
+            font-size: 13px;
+            margin-bottom: 28px;
+        }
+
+        .credit-number {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .credit-label {
+            color: #aeb8c8;
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        .credit-progress {
+            height: 7px;
+            background: #273142;
+            border-radius: 20px;
+            margin: 25px 0 10px;
+            overflow: hidden;
+        }
+
+        .credit-progress span {
+            display: block;
+            width: 31%;
+            height: 100%;
+            background: #4d8df7;
+            border-radius: 20px;
+        }
+
+        .credit-used {
+            display: flex;
+            justify-content: space-between;
+            color: #aeb8c8;
+            font-size: 12px;
+        }
+
+        .credit-used strong {
+            color: white;
+        }
+
+        /* ==============================
+           TRANSACTIONS
+        ============================== */
+
+        .card-transactions {
+            margin-top: 25px;
+            background: white;
+            border: 1px solid #e7eaf0;
+            border-radius: 18px;
+            padding: 28px;
+        }
+
+        .transactions-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .transactions-title h2 {
+            margin: 0;
+            font-size: 20px;
+            color: #111827;
+        }
+
+        .transactions-title a {
+            color: #174ea6;
+            font-size: 13px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .card-transaction {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            padding: 14px 0;
+            border-bottom: 1px solid #edf0f4;
+        }
+
+        .card-transaction:last-child {
+            border-bottom: none;
+        }
+
+        .transaction-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #edf4ff;
+            color: #174ea6;
+        }
+
+        .transaction-details {
+            flex: 1;
+        }
+
+        .transaction-details strong {
+            display: block;
+            color: #111827;
+            font-size: 14px;
+        }
+
+        .transaction-details span {
+            color: #8a93a3;
+            font-size: 12px;
+        }
+
+        .transaction-amount {
+            color: #111827;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        /* ==============================
+           MOBILE
+        ============================== */
+
+        @media (max-width: 850px) {
+
+            .cards-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .credit-panel {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .cards-header {
+                padding: 15px 20px;
+            }
+
+            .cards-profile div:last-child {
+                display: none;
+            }
+
+            .cards-main {
+                padding: 30px 18px 60px;
+            }
+
+            .cards-heading h1 {
+                font-size: 29px;
+            }
+
+            .bank-card-wrapper {
+                padding: 18px;
+            }
+
+            .bank-card {
+                min-height: 230px;
+                padding: 20px;
+                border-radius: 16px;
+            }
+
+            .chip {
+                width: 43px;
+                height: 32px;
+                margin-top: 35px;
+            }
+
+            .chip::after {
+                top: 14px;
+            }
+
+            .chip::before {
+                left: 14px;
+            }
+
+            .card-number {
+                font-size: 17px;
+                letter-spacing: 2px;
+                margin-top: 22px;
+            }
+
+            .card-bottom {
+                left: 20px;
+                right: 20px;
+                bottom: 18px;
+            }
+
+            .card-value {
+                font-size: 10px;
+            }
+
+            .visa {
+                font-size: 21px;
+            }
+
+            .card-controls {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            .card-control {
+                font-size: 11px;
+                padding: 12px 5px;
+            }
+
+            .card-control i {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="cards-page">
+
+    <!-- HEADER -->
+
+    <header class="cards-header">
+
+        <div class="cards-header-left">
+
+            <strong class="logo">
+                HORIZON<span>.</span>
+            </strong>
+
+            <a href="dashboard.html" class="cards-back">
+                ← Dashboard
+            </a>
+
+        </div>
+
+        <div class="cards-profile">
+
+            <div class="cards-avatar">
+                BM
+            </div>
+
+            <div>
+                <strong>Bobby Meeks</strong><br>
+                <small>Personal Banking</small>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main class="cards-main">
+
+        <div class="cards-heading">
+
+            <span>MY CARDS</span>
+
+            <h1>Your Cards</h1>
+
+            <p>
+                Manage your Horizon Bank cards and card activity.
+            </p>
+
+        </div>
+
+
+        <div class="cards-demo-notice">
+
+            <strong>Card Environment:</strong>
+
+        </div>
+
+
+        <div class="cards-layout">
+
+
+            <!-- CARD -->
+
+            <section class="bank-card-wrapper">
+
+                <div class="bank-card">
+
+                    <div class="card-top">
+
+                        <div class="card-brand">
+                            HORIZON<span>BANK</span>
+                        </div>
+
+                        <div class="card-type">
+                            PLATINUM
+                        </div>
+
+                    </div>
+
+
+                    <div class="chip"></div>
+
+
+                    <div class="card-number" id="cardNumber">
+                        •••• •••• •••• 7412
+                    </div>
+
+
+                    <div class="card-bottom">
+
+                        <div>
+
+                            <span class="card-label">
+                                CARDHOLDER
+                            </span>
+
+                            <div class="card-value">
+                                BOBBY MEEKS
+                            </div>
+
+                        </div>
+
+
+                        <div>
+
+                            <span class="card-label">
+                                EXPIRES
+                            </span>
+
+                            <div class="card-value">
+                                10/29
+                            </div>
+
+                        </div>
+
+
+                        <div class="visa">
+                            VISA
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTROLS -->
+
+                <div class="card-controls">
+
+                    <button
+                        class="card-control"
+                        id="showCardButton"
+                    >
+                        <i class="fa-solid fa-eye"></i>
+                        Show number
+                    </button>
+
+
+                    <button
+                        class="card-control"
+                        id="freezeButton"
+                    >
+                        <i class="fa-solid fa-snowflake"></i>
+                        Freeze card
+                    </button>
+
+
+                    <button
+                        class="card-control"
+                        id="settingsButton"
+                    >
+                        <i class="fa-solid fa-gear"></i>
+                        Settings
+                    </button>
+
+                </div>
+
+
+                <!-- CARD INFO -->
+
+                <div class="card-info">
+
+                    <h3>Card information</h3>
+
+                    <div class="info-row">
+
+                        <span>Card type</span>
+
+                        <strong>
+                            Horizon Platinum Visa
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span>Card ending</span>
+
+                        <strong>
+                            7412
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span>Expiration</span>
+
+                        <strong>
+                            October 2029
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <span>Card status</span>
+
+                        <strong id="cardStatus">
+                            Active
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CREDIT PANEL -->
+
+            <aside>
+
+                <div class="credit-panel">
+
+                    <h2>Available Credit</h2>
+
+                    <p>
+                        Horizon Platinum ••••7412
+                    </p>
+
+
+                    <div class="credit-number">
+                        $8,740.00
+                    </div>
+
+                    <div class="credit-label">
+                        Available to spend
+                    </div>
+
+
+                    <div class="credit-progress">
+                        <span></span>
+                    </div>
+
+
+                    <div class="credit-used">
+
+                        <span>
+                            Used
+                            <strong>$3,960</strong>
+                        </span>
+
+                        <span>
+                            Limit
+                            <strong>$12,700</strong>
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TRANSACTIONS -->
+
+                <div class="card-transactions">
+
+                    <div class="transactions-title">
+
+                        <h2>Recent card activity</h2>
+
+                        <a href="#">
+                            See all
+                        </a>
+
+                    </div>
+
+
+                    <div class="card-transaction">
+
+                        <div class="transaction-icon">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+
+                        <div class="transaction-details">
+
+                            <strong>
+                                Nike Store
+                            </strong>
+
+                            <span>
+                                Oct 7 · Purchase
+                            </span>
+
+                        </div>
+
+                        <div class="transaction-amount">
+                            -$129.99
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-transaction">
+
+                        <div class="transaction-icon">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+
+                        <div class="transaction-details">
+
+                            <strong>
+                                Garden Restaurant
+                            </strong>
+
+                            <span>
+                                Oct 6 · Purchase
+                            </span>
+
+                        </div>
+
+                        <div class="transaction-amount">
+                            -$84.50
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-transaction">
+
+                        <div class="transaction-icon">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+
+                        <div class="transaction-details">
+
+                            <strong>
+                                Amazon
+                            </strong>
+
+                            <span>
+                                Oct 2 · Purchase
+                            </span>
+
+                        </div>
+
+                        <div class="transaction-amount">
+                            -$76.42
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script>
+
+    /* ==========================
+       SHOW / HIDE CARD NUMBER
+    ========================== */
+
+    const cardNumber =
+        document.getElementById("cardNumber");
+
+    const showCardButton =
+        document.getElementById("showCardButton");
+
+    let cardVisible = false;
+
+    showCardButton.addEventListener("click", () => {
+
+        cardVisible = !cardVisible;
+
+        if (cardVisible) {
+
+            cardNumber.textContent =
+                "4827 7412 9032 6184";
+
+            showCardButton.innerHTML =
+                '<i class="fa-solid fa-eye-slash"></i> Hide number';
+
+        } else {
+
+            cardNumber.textContent =
+                "•••• •••• •••• 7412";
+
+            showCardButton.innerHTML =
+                '<i class="fa-solid fa-eye"></i> Show number';
+
+        }
+
+    });
+
+
+    /* ==========================
+       FREEZE CARD
+    ========================== */
+
+    const freezeButton =
+        document.getElementById("freezeButton");
+
+    const cardStatus =
+        document.getElementById("cardStatus");
+
+    let cardFrozen = false;
+
+    freezeButton.addEventListener("click", () => {
+
+        cardFrozen = !cardFrozen;
+
+        if (cardFrozen) {
+
+            cardStatus.textContent =
+                "Frozen";
+
+            cardStatus.style.color =
+                "#b42318";
+
+            freezeButton.classList.add("frozen");
+
+            freezeButton.innerHTML =
+                '<i class="fa-solid fa-lock"></i> Unfreeze card';
+
+        } else {
+
+            cardStatus.textContent =
+                "Active";
+
+            cardStatus.style.color =
+                "";
+
+            freezeButton.classList.remove("frozen");
+
+            freezeButton.innerHTML =
+                '<i class="fa-solid fa-snowflake"></i> Freeze card';
+
+        }
+
+    });
+
+
+    /* ==========================
+       SETTINGS DEMO
+    ========================== */
+
+    const settingsButton =
+        document.getElementById("settingsButton");
+
+    settingsButton.addEventListener("click", () => {
+
+        alert(
+            " My Card settings would open here."
+        );
+
+    });
+
+</script>
+
+</body>
+</html>
