@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Investments | Horizon Bank</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body class="investment-page">
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header class="investment-header">
+
+        <div class="investment-header-left">
+
+            <a href="dashboard.html" class="investment-back">
+                <i class="fa-solid fa-arrow-left"></i>
+                Dashboard
+            </a>
+
+            <div class="investment-divider"></div>
+
+            <div>
+                <span class="investment-label">PERSONAL BANKING</span>
+                <h1>Investments</h1>
+            </div>
+
+        </div>
+
+        <div class="investment-user">
+
+            <div class="investment-avatar">
+                BM
+            </div>
+
+            <div>
+                <strong>Bobby Meeks</strong>
+                <span>Personal Account</span>
+            </div>
+
+            <i class="fa-solid fa-chevron-down"></i>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+    <main class="investment-main">
+
+        <!-- DEMO NOTICE -->
+        <div class="investment-demo-notice">
+
+            <div class="investment-demo-icon">
+                <i class="fa-solid fa-flask"></i>
+            </div>
+
+            <div>
+                <strong>Investment Environment</strong>
+
+                <p>
+                    This portfolio contains Real-Time investment data for
+                    Banking purposes only. ONLY Real investments or
+                    transactions are connected to this page.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             HERO / PORTFOLIO OVERVIEW
+        ========================== -->
+        <section class="investment-hero">
+
+            <div class="investment-hero-copy">
+
+                <span class="investment-eyebrow">
+                    PORTFOLIO OVERVIEW
+                </span>
+
+                <h2>Grow your future.</h2>
+
+                <p>
+                    Track your investments, monitor performance, and
+                    keep your long-term goals in sight.
+                </p>
+
+                <div class="investment-actions">
+
+                    <button
+                        class="investment-primary-btn"
+                        onclick="investmentDemo('Buy Investments')"
+                    >
+                        <i class="fa-solid fa-plus"></i>
+                        Buy Investments
+                    </button>
+
+                    <button
+                        class="investment-secondary-btn"
+                        onclick="investmentDemo('Explore Investments')"
+                    >
+                        Explore Investments
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="investment-total-card">
+
+                <span>Total Portfolio Value</span>
+
+                <div class="investment-total-value">
+                    $84,726.38
+                </div>
+
+                <div class="investment-total-change">
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+                    +$7,426.38 <span>(+9.61%)</span>
+                </div>
+
+                <small>Since inception</small>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PERFORMANCE SUMMARY
+        ========================== -->
+        <section class="investment-stats-grid">
+
+            <div class="investment-stat-card">
+
+                <div class="investment-stat-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+                <div>
+                    <span>Today's Gain/Loss</span>
+                    <strong class="positive-number">
+                        +$426.82
+                    </strong>
+                    <small>+0.51%</small>
+                </div>
+
+            </div>
+
+
+            <div class="investment-stat-card">
+
+                <div class="investment-stat-icon">
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+                </div>
+
+                <div>
+                    <span>Total Return</span>
+                    <strong class="positive-number">
+                        +$7,426.38
+                    </strong>
+                    <small>+9.61%</small>
+                </div>
+
+            </div>
+
+
+            <div class="investment-stat-card">
+
+                <div class="investment-stat-icon">
+                    <i class="fa-solid fa-wallet"></i>
+                </div>
+
+                <div>
+                    <span>Cash Available</span>
+                    <strong>
+                        $4,820.50
+                    </strong>
+                    <small>Ready to invest</small>
+                </div>
+
+            </div>
+
+
+            <div class="investment-stat-card">
+
+                <div class="investment-stat-icon">
+                    <i class="fa-solid fa-bullseye"></i>
+                </div>
+
+                <div>
+                    <span>Investment Goal</span>
+                    <strong>
+                        68%
+                    </strong>
+                    <small>$125,000 target</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CHART + ALLOCATION
+        ========================== -->
+        <section class="investment-main-grid">
+
+            <!-- PERFORMANCE CHART -->
+            <div class="investment-panel performance-panel">
+
+                <div class="investment-panel-header">
+
+                    <div>
+                        <span>PORTFOLIO PERFORMANCE</span>
+                        <h3>Growth over time</h3>
+                    </div>
+
+                    <select id="performanceRange">
+                        <option>1 Month</option>
+                        <option>3 Months</option>
+                        <option selected>1 Year</option>
+                        <option>All Time</option>
+                    </select>
+
+                </div>
+
+
+                <div class="performance-summary">
+
+                    <strong>$84,726.38</strong>
+
+                    <span>
+                        <i class="fa-solid fa-arrow-up"></i>
+                        9.61%
+                    </span>
+
+                </div>
+
+
+                <div class="investment-chart">
+
+                    <div class="chart-y-axis">
+                        <span>$90K</span>
+                        <span>$70K</span>
+                        <span>$50K</span>
+                        <span>$30K</span>
+                        <span>$10K</span>
+                    </div>
+
+                    <div class="chart-area">
+
+                        <div class="chart-grid-line line-1"></div>
+                        <div class="chart-grid-line line-2"></div>
+                        <div class="chart-grid-line line-3"></div>
+                        <div class="chart-grid-line line-4"></div>
+                        <div class="chart-grid-line line-5"></div>
+
+                        <svg
+                            class="investment-svg"
+                            viewBox="0 0 700 260"
+                            preserveAspectRatio="none"
+                        >
+
+                            <defs>
+
+                                <linearGradient
+                                    id="investmentGradient"
+                                    x1="0"
+                                    x2="0"
+                                    y1="0"
+                                    y2="1"
+                                >
+
+                                    <stop
+                                        offset="0%"
+                                        stop-opacity="0.25"
+                                    />
+
+                                    <stop
+                                        offset="100%"
+                                        stop-opacity="0"
+                                    />
+
+                                </linearGradient>
+
+                            </defs>
+
+
+                            <path
+                                class="chart-fill"
+                                d="
+                                M0,210
+                                C50,195 70,205 105,185
+                                C140,165 150,178 190,160
+                                C230,142 245,150 280,125
+                                C315,100 335,118 370,105
+                                C410,90 420,98 455,76
+                                C490,55 515,70 545,58
+                                C585,42 610,55 640,32
+                                C665,20 685,27 700,12
+                                L700,260
+                                L0,260
+                                Z
+                                "
+                            ></path>
+
+
+                            <path
+                                class="chart-line"
+                                d="
+                                M0,210
+                                C50,195 70,205 105,185
+                                C140,165 150,178 190,160
+                                C230,142 245,150 280,125
+                                C315,100 335,118 370,105
+                                C410,90 420,98 455,76
+                                C490,55 515,70 545,58
+                                C585,42 610,55 640,32
+                                C665,20 685,27 700,12
+                                "
+                            ></path>
+
+
+                            <circle
+                                class="chart-point"
+                                cx="700"
+                                cy="12"
+                                r="6"
+                            ></circle>
+
+                        </svg>
+
+
+                        <div class="chart-months">
+                            <span>Nov</span>
+                            <span>Jan</span>
+                            <span>Mar</span>
+                            <span>May</span>
+                            <span>Jul</span>
+                            <span>Sep</span>
+                            <span>Oct</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ASSET ALLOCATION -->
+            <div class="investment-panel allocation-panel">
+
+                <div class="investment-panel-header">
+
+                    <div>
+                        <span>ASSET ALLOCATION</span>
+                        <h3>Where your money is invested</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="allocation-content">
+
+                    <div class="allocation-ring">
+
+                        <div class="allocation-ring-center">
+                            <strong>100%</strong>
+                            <span>Invested</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="allocation-list">
+
+                        <div class="allocation-item">
+
+                            <div class="allocation-name">
+                                <span class="allocation-dot stocks"></span>
+                                <span>Stocks</span>
+                            </div>
+
+                            <strong>52%</strong>
+
+                        </div>
+
+
+                        <div class="allocation-item">
+
+                            <div class="allocation-name">
+                                <span class="allocation-dot bonds"></span>
+                                <span>Bonds</span>
+                            </div>
+
+                            <strong>25%</strong>
+
+                        </div>
+
+
+                        <div class="allocation-item">
+
+                            <div class="allocation-name">
+                                <span class="allocation-dot funds"></span>
+                                <span>Index Funds</span>
+                            </div>
+
+                            <strong>15%</strong>
+
+                        </div>
+
+
+                        <div class="allocation-item">
+
+                            <div class="allocation-name">
+                                <span class="allocation-dot cash"></span>
+                                <span>Cash</span>
+                            </div>
+
+                            <strong>8%</strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             INVESTMENTS
+        ========================== -->
+        <section class="investment-panel holdings-panel">
+
+            <div class="investment-panel-header">
+
+                <div>
+                    <span>YOUR INVESTMENTS</span>
+                    <h3>Portfolio holdings</h3>
+                </div>
+
+                <button
+                    class="view-all-btn"
+                    onclick="investmentDemo('View all investments')"
+                >
+                    View all
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+
+            <div class="holdings-table-wrap">
+
+                <table class="holdings-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Investment</th>
+                            <th>Shares</th>
+                            <th>Price</th>
+                            <th>Market Value</th>
+                            <th>Today's Change</th>
+                            <th>Total Return</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+
+                                <div class="holding-name">
+
+                                    <div class="holding-icon">
+                                        A
+                                    </div>
+
+                                    <div>
+                                        <strong>Horizon Growth Fund</strong>
+                                        <span>HGF • Mutual Fund</span>
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>184.52</td>
+
+                            <td>$142.86</td>
+
+                            <td><strong>$26,362.21</strong></td>
+
+                            <td class="positive-number">
+                                +$184.52
+                            </td>
+
+                            <td class="positive-number">
+                                +12.84%
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+
+                                <div class="holding-name">
+
+                                    <div class="holding-icon">
+                                        S
+                                    </div>
+
+                                    <div>
+                                        <strong>Summit Technology ETF</strong>
+                                        <span>SMT • ETF</span>
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>96.80</td>
+
+                            <td>$218.42</td>
+
+                            <td><strong>$21,143.06</strong></td>
+
+                            <td class="positive-number">
+                                +$126.24
+                            </td>
+
+                            <td class="positive-number">
+                                +15.42%
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+
+                                <div class="holding-name">
+
+                                    <div class="holding-icon">
+                                        T
+                                    </div>
+
+                                    <div>
+                                        <strong>Treasury Bond Fund</strong>
+                                        <span>TBF • Bond Fund</span>
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>142.25</td>
+
+                            <td>$98.74</td>
+
+                            <td><strong>$14,044.68</strong></td>
+
+                            <td class="positive-number">
+                                +$31.62
+                            </td>
+
+                            <td class="positive-number">
+                                +5.82%
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+
+                                <div class="holding-name">
+
+                                    <div class="holding-icon">
+                                        G
+                                    </div>
+
+                                    <div>
+                                        <strong>Global Market Index</strong>
+                                        <span>GMI • Index Fund</span>
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>82.40</td>
+
+                            <td>$182.91</td>
+
+                            <td><strong>$15,066.43</strong></td>
+
+                            <td class="positive-number">
+                                +$84.44
+                            </td>
+
+                            <td class="positive-number">
+                                +8.76%
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             RECENT ACTIVITY
+        ========================== -->
+        <section class="investment-bottom-grid">
+
+            <div class="investment-panel activity-panel">
+
+                <div class="investment-panel-header">
+
+                    <div>
+                        <span>RECENT ACTIVITY</span>
+                        <h3>Investment activity</h3>
+                    </div>
+
+                    <button
+                        class="view-all-btn"
+                        onclick="investmentDemo('View activity')"
+                    >
+                        View all
+                    </button>
+
+                </div>
+
+
+                <div class="investment-activity-list">
+
+                    <div class="investment-activity">
+
+                        <div class="activity-icon buy">
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </div>
+
+                        <div class="activity-info">
+                            <strong>Buy — Horizon Growth Fund</strong>
+                            <span>Oct 7, 2026 • 10:42 AM</span>
+                        </div>
+
+                        <div class="activity-amount">
+                            -$1,250.00
+                        </div>
+
+                    </div>
+
+
+                    <div class="investment-activity">
+
+                        <div class="activity-icon dividend">
+                            <i class="fa-solid fa-coins"></i>
+                        </div>
+
+                        <div class="activity-info">
+                            <strong>Dividend received</strong>
+                            <span>Oct 3, 2026 • Horizon Growth Fund</span>
+                        </div>
+
+                        <div class="activity-amount positive-number">
+                            +$184.62
+                        </div>
+
+                    </div>
+
+
+                    <div class="investment-activity">
+
+                        <div class="activity-icon buy">
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </div>
+
+                        <div class="activity-info">
+                            <strong>Buy — Summit Technology ETF</strong>
+                            <span>Sep 28, 2026 • 2:16 PM</span>
+                        </div>
+
+                        <div class="activity-amount">
+                            -$860.00
+                        </div>
+
+                    </div>
+
+
+                    <div class="investment-activity">
+
+                        <div class="activity-icon deposit">
+                            <i class="fa-solid fa-arrow-up"></i>
+                        </div>
+
+                        <div class="activity-info">
+                            <strong>Investment deposit</strong>
+                            <span>Sep 15, 2026 • Horizon Checking</span>
+                        </div>
+
+                        <div class="activity-amount positive-number">
+                            +$2,500.00
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- INVESTMENT GOAL -->
+            <div class="investment-panel goal-panel">
+
+                <div class="investment-panel-header">
+
+                    <div>
+                        <span>INVESTMENT GOAL</span>
+                        <h3>Build your wealth</h3>
+                    </div>
+
+                    <i class="fa-solid fa-bullseye goal-header-icon"></i>
+
+                </div>
+
+
+                <div class="goal-value">
+
+                    <strong>$84,726</strong>
+
+                    <span>of $125,000</span>
+
+                </div>
+
+
+                <div class="goal-progress">
+
+                    <div
+                        class="goal-progress-bar"
+                        style="width: 68%;"
+                    ></div>
+
+                </div>
+
+
+                <div class="goal-footer">
+
+                    <span>68% complete</span>
+
+                    <span>$40,274 remaining</span>
+
+                </div>
+
+
+                <button
+                    class="goal-btn"
+                    onclick="investmentDemo('Manage investment goal')"
+                >
+                    Manage Goal
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECURITY -->
+        <section class="investment-security">
+
+            <div class="security-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+
+            <div>
+                <strong>Your information is protected</strong>
+
+                <p>
+                    This is a fictional Horizon Bank investment
+                    environment created for UI purposes.
+                    ONLY Real financial accounts, securities, or transactions
+                    are connected.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="investment-footer">
+
+        <span>© 2026 Horizon Bank — Banking Environment</span>
+
+        <div>
+            <a href="#">Privacy</a>
+            <a href="#">Security</a>
+            <a href="#">Help</a>
+        </div>
+
+    </footer>
+
+
+    <script>
+
+        function investmentDemo(action) {
+
+            alert(
+                action +
+                " is available in this Online Horizon Bank only."
+            );
+
+        }
+
+
+        const performanceRange =
+            document.getElementById("performanceRange");
+
+
+        if (performanceRange) {
+
+            performanceRange.addEventListener(
+                "change",
+                function () {
+
+                    alert(
+                        "Performance range changed to " +
+                        this.value +
+                        ". This is Real data only."
+                    );
+
+                }
+            );
+
+        }
+
+    </script>
+
+</body>
+</html>

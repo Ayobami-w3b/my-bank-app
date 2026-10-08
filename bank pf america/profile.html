@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile & Settings | Horizon Bank</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body class="profile-page">
+
+    <!-- HEADER -->
+    <header class="profile-header">
+
+        <div class="profile-header-left">
+
+            <a href="dashboard.html" class="profile-back">
+                <i class="fa-solid fa-arrow-left"></i>
+                Dashboard
+            </a>
+
+            <div class="profile-divider"></div>
+
+            <div>
+                <span class="profile-label">PERSONAL BANKING</span>
+                <h1>Profile & Settings</h1>
+            </div>
+
+        </div>
+
+        <div class="profile-user">
+
+            <div class="profile-avatar">
+                BM
+            </div>
+
+            <div class="profile-user-info">
+                <strong>Bobby Meeks</strong>
+                <span>Personal Account</span>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="profile-main">
+
+        <!-- DEMO NOTICE -->
+        <div class="profile-demo-notice">
+
+            <div class="profile-demo-icon">
+                <i class="fa-solid fa-flask"></i>
+            </div>
+
+            <div>
+                <strong>MY PROFILE</strong>
+
+                <p>
+                    This profile contains Real-Time information for the
+                    Horizon Bank . Only real personal information
+                    or account settings are connected.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- PROFILE HERO -->
+        <section class="profile-hero">
+
+            <div class="profile-large-avatar">
+                BM
+            </div>
+
+            <div class="profile-hero-info">
+
+                <span>PERSONAL ACCOUNT</span>
+
+                <h2>Bobby Meeks</h2>
+
+                <p>
+                    Member since March 2021
+                </p>
+
+                <div class="profile-status">
+                    <i class="fa-solid fa-circle"></i>
+                    Account Active
+                </div>
+
+            </div>
+
+            <button
+                class="profile-edit-btn"
+                onclick="profileDemo('Edit Profile')"
+            >
+                <i class="fa-solid fa-pen"></i>
+                Edit Profile
+            </button>
+
+        </section>
+
+
+        <!-- CONTENT GRID -->
+        <div class="profile-content-grid">
+
+            <!-- LEFT -->
+            <div class="profile-left-column">
+
+
+                <!-- PERSONAL INFORMATION -->
+                <section class="profile-card">
+
+                    <div class="profile-card-header">
+
+                        <div>
+                            <span>ACCOUNT INFORMATION</span>
+                            <h3>Personal Information</h3>
+                        </div>
+
+                        <button
+                            class="profile-small-btn"
+                            onclick="profileDemo('Edit personal information')"
+                        >
+                            Edit
+                        </button>
+
+                    </div>
+
+
+                    <div class="profile-information-grid">
+
+                        <div class="profile-field">
+
+                            <span>FULL NAME</span>
+
+                            <strong>
+                                Bobby Meeks
+                            </strong>
+
+                        </div>
+
+
+                        <div class="profile-field">
+
+                            <span>DATE OF BIRTH</span>
+
+                            <strong>
+                                •• / •• / 1998
+                            </strong>
+
+                        </div>
+
+
+                        <div class="profile-field">
+
+                            <span>EMAIL ADDRESS</span>
+
+                            <strong>
+                                bobby.meeks@example.com
+                            </strong>
+
+                        </div>
+
+
+                        <div class="profile-field">
+
+                            <span>PHONE NUMBER</span>
+
+                            <strong>
+                                (555) 014-7284
+                            </strong>
+
+                        </div>
+
+
+                        <div class="profile-field">
+
+                            <span>HOME ADDRESS</span>
+
+                            <strong>
+                                1248 Horizon Avenue
+                            </strong>
+
+                        </div>
+
+
+                        <div class="profile-field">
+
+                            <span>CITY / STATE</span>
+
+                            <strong>
+                                Orlando, FL
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- SECURITY -->
+                <section class="profile-card">
+
+                    <div class="profile-card-header">
+
+                        <div>
+                            <span>ACCOUNT PROTECTION</span>
+                            <h3>Security</h3>
+                        </div>
+
+                        <div class="security-badge">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            Protected
+                        </div>
+
+                    </div>
+
+
+                    <div class="security-settings">
+
+
+                        <div class="security-setting">
+
+                            <div class="setting-icon">
+                                <i class="fa-solid fa-lock"></i>
+                            </div>
+
+                            <div class="setting-info">
+
+                                <strong>Password</strong>
+
+                                <span>
+                                    Last changed 42 days ago
+                                </span>
+
+                            </div>
+
+                            <button
+                                onclick="profileDemo('Change Password')"
+                            >
+                                Change
+                            </button>
+
+                        </div>
+
+
+                        <div class="security-setting">
+
+                            <div class="setting-icon">
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+                            </div>
+
+                            <div class="setting-info">
+
+                                <strong>Two-Step Verification</strong>
+
+                                <span>
+                                    Extra security is enabled
+                                </span>
+
+                            </div>
+
+                            <label class="toggle-switch">
+
+                                <input
+                                    type="checkbox"
+                                    checked
+                                    onchange="toggleDemo(this, 'Two-Step Verification')"
+                                >
+
+                                <span class="toggle-slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="security-setting">
+
+                            <div class="setting-icon">
+                                <i class="fa-solid fa-bell"></i>
+                            </div>
+
+                            <div class="setting-info">
+
+                                <strong>Security Alerts</strong>
+
+                                <span>
+                                    Receive alerts about account activity
+                                </span>
+
+                            </div>
+
+                            <label class="toggle-switch">
+
+                                <input
+                                    type="checkbox"
+                                    checked
+                                    onchange="toggleDemo(this, 'Security Alerts')"
+                                >
+
+                                <span class="toggle-slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+                <!-- NOTIFICATIONS -->
+                <section class="profile-card">
+
+                    <div class="profile-card-header">
+
+                        <div>
+                            <span>COMMUNICATION</span>
+                            <h3>Notification Preferences</h3>
+                        </div>
+
+                    </div>
+
+
+                    <div class="notification-list">
+
+
+                        <div class="notification-setting">
+
+                            <div>
+
+                                <strong>
+                                    Transaction Notifications
+                                </strong>
+
+                                <span>
+                                    Get notified when money moves in or out
+                                    of your account.
+                                </span>
+
+                            </div>
+
+                            <label class="toggle-switch">
+
+                                <input
+                                    type="checkbox"
+                                    checked
+                                    onchange="toggleDemo(this, 'Transaction Notifications')"
+                                >
+
+                                <span class="toggle-slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="notification-setting">
+
+                            <div>
+
+                                <strong>
+                                    Email Statements
+                                </strong>
+
+                                <span>
+                                    Receive monthly statements by email.
+                                </span>
+
+                            </div>
+
+                            <label class="toggle-switch">
+
+                                <input
+                                    type="checkbox"
+                                    checked
+                                    onchange="toggleDemo(this, 'Email Statements')"
+                                >
+
+                                <span class="toggle-slider"></span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="notification-setting">
+
+                            <div>
+
+                                <strong>
+                                    Promotional Offers
+                                </strong>
+
+                                <span>
+                                    Receive information about new Horizon
+                                    products and offers.
+                                </span>
+
+                            </div>
+
+                            <label class="toggle-switch">
+
+                                <input
+                                    type="checkbox"
+                                    onchange="toggleDemo(this, 'Promotional Offers')"
+                                >
+
+                                <span class="toggle-slider"></span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <!-- RIGHT -->
+            <div class="profile-right-column">
+
+
+                <!-- ACCOUNT SUMMARY -->
+                <section class="profile-card account-summary-card">
+
+                    <div class="profile-card-header">
+
+                        <div>
+                            <span>ACCOUNT</span>
+                            <h3>Account Summary</h3>
+                        </div>
+
+                    </div>
+
+
+                    <div class="account-summary-list">
+
+                        <div>
+                            <span>Checking</span>
+                            <strong>•••• 4827</strong>
+                        </div>
+
+                        <div>
+                            <span>Savings</span>
+                            <strong>•••• 2194</strong>
+                        </div>
+
+                        <div>
+                            <span>Credit Card</span>
+                            <strong>•••• 7412</strong>
+                        </div>
+
+                        <div>
+                            <span>Investment</span>
+                            <strong>Portfolio</strong>
+                        </div>
+
+                    </div>
+
+                    <a
+                        href="dashboard.html"
+                        class="profile-dashboard-btn"
+                    >
+                        View Dashboard
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </section>
+
+
+                <!-- DEVICES -->
+                <section class="profile-card">
+
+                    <div class="profile-card-header">
+
+                        <div>
+                            <span>SECURITY</span>
+                            <h3>Connected Devices</h3>
+                        </div>
+
+                    </div>
+
+
+                    <div class="device-list">
+
+
+                        <div class="device-item">
+
+                            <div class="device-icon">
+                                <i class="fa-solid fa-laptop"></i>
+                            </div>
+
+                            <div class="device-info">
+
+                                <strong>
+                                    Windows PC
+                                </strong>
+
+                                <span>
+                                    Chrome • Active now
+                                </span>
+
+                            </div>
+
+                            <span class="device-active">
+                                Active
+                            </span>
+
+                        </div>
+
+
+                        <div class="device-item">
+
+                            <div class="device-icon">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                            </div>
+
+                            <div class="device-info">
+
+                                <strong>
+                                    iPhone 15
+                                </strong>
+
+                                <span>
+                                    Safari • 2 days ago
+                                </span>
+
+                            </div>
+
+                            <button
+                                onclick="profileDemo('Remove device')"
+                                class="device-remove"
+                            >
+                                Remove
+                            </button>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+                <!-- PRIVACY -->
+                <section class="profile-card">
+
+                    <div class="profile-card-header">
+
+                        <div>
+                            <span>PRIVACY</span>
+                            <h3>Privacy Settings</h3>
+                        </div>
+
+                    </div>
+
+
+                    <div class="privacy-list">
+
+                        <button
+                            onclick="profileDemo('Privacy preferences')"
+                        >
+                            <span>
+                                <i class="fa-solid fa-user-shield"></i>
+                                Privacy Preferences
+                            </span>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+
+                        <button
+                            onclick="profileDemo('Data sharing')"
+                        >
+                            <span>
+                                <i class="fa-solid fa-share-nodes"></i>
+                                Data Sharing
+                            </span>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+
+                        <button
+                            onclick="profileDemo('Terms and conditions')"
+                        >
+                            <span>
+                                <i class="fa-solid fa-file-lines"></i>
+                                Terms & Conditions
+                            </span>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- DANGER ZONE -->
+                <section class="profile-card danger-card">
+
+                    <div class="profile-card-header">
+
+                        <div>
+                            <span>ACCOUNT ACCESS</span>
+                            <h3>Sign Out</h3>
+                        </div>
+
+                    </div>
+
+                    <p>
+                        Sign out of this Horizon Bank session.
+                    </p>
+
+                    <button
+                        class="signout-btn"
+                        onclick="signOutDemo()"
+                    >
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Sign Out
+                    </button>
+
+                </section>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- SECURITY FOOTER -->
+        <section class="profile-security-footer">
+
+            <div class="profile-security-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+
+            <div>
+
+                <strong>
+                    Your security matters
+                </strong>
+
+                <p>
+                    Horizon Bank uses industry-standard security
+                    technologies to help protect your information.
+                    This website is a fictional UI and
+                    does Only process real banking information.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="profile-footer">
+
+        <span>
+            © 2026 Horizon Bank — Banking Environment
+        </span>
+
+        <div>
+            <a href="#">Privacy</a>
+            <a href="#">Security</a>
+            <a href="#">Help</a>
+        </div>
+
+    </footer>
+
+
+    <script>
+
+        function profileDemo(action) {
+
+            alert(
+                action +
+                " is available in this fictional Horizon Bank demo only."
+            );
+
+        }
+
+
+        function toggleDemo(element, setting) {
+
+            const state = element.checked
+                ? "enabled"
+                : "disabled";
+
+            alert(
+                setting +
+                " has been " +
+                state +
+                " in this page."
+            );
+
+        }
+
+
+        function signOutDemo() {
+
+            const confirmSignOut = confirm(
+                "Sign out of the Horizon Bank page?"
+            );
+
+            if (confirmSignOut) {
+
+                window.location.href = "login.html";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
